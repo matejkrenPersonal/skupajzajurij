@@ -1,0 +1,774 @@
+<!doctype html>
+<html lang="sl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Skupaj za Jurij!</title>
+<meta name="description" content="Simona Bauman, kandidatka za županjo Občine Sveti Jurij v Slovenskih goricah, in neodvisna lista Skupaj za Jurij. Lokalne volitve 15. novembra 2026.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Montserrat:wght@500;700;800&family=Poppins:wght@400;500;600&display=swap">
+<style>
+/* Postavitev: oranžen pas z valovitim robom (kot na plakatih in zloženki), nato beli razdelki na eni strani: kandidatka, program, lista, pobude. */
+:root {
+  --oranzna: #E05E3C;      /* barva kampanje */
+  --oranzna-tekst: #B5432A; /* oranžna za drobno besedilo na svetli podlagi */
+  --na-oranzni: #FFFFFF;
+  --ozadje: #FFFFFF;
+  --ozadje-2: #FBF3EF;
+  --crta: #EEDFD8;
+  --tekst: #2B211E;
+  --tekst-2: #6B5A54;
+  --f-naslov: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+  --f-besedilo: "Poppins", "Helvetica Neue", Arial, sans-serif;
+  --f-rokopis: "Caveat", "Segoe Script", "Bradley Hand", cursive;
+  --sirina: 1120px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --oranzna: #D9573A; --oranzna-tekst: #F59578; --na-oranzni: #FFFFFF;
+    --ozadje: #171211; --ozadje-2: #211917; --crta: #3A2D29;
+    --tekst: #F4ECE8; --tekst-2: #BCAAA3; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --oranzna: #D9573A; --oranzna-tekst: #F59578; --na-oranzni: #FFFFFF;
+  --ozadje: #171211; --ozadje-2: #211917; --crta: #3A2D29;
+  --tekst: #F4ECE8; --tekst-2: #BCAAA3; color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  margin: 0; background: var(--ozadje); color: var(--tekst);
+  font: 400 17px/1.65 var(--f-besedilo);
+  -webkit-font-smoothing: antialiased;
+}
+body::before {
+  content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px);
+  z-index: 10; background: var(--oranzna);
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--oranzna-tekst); outline-offset: 3px; border-radius: 4px; }
+
+.ovoj {
+  max-width: var(--sirina); margin: 0 auto;
+  padding-left: max(20px, env(safe-area-inset-left, 0px));
+  padding-right: max(20px, env(safe-area-inset-right, 0px));
+}
+h1, h2, h3 { text-wrap: balance; margin: 0; }
+h2 {
+  font: 800 clamp(1.6rem, 1.2rem + 1.6vw, 2.4rem)/1.15 var(--f-naslov);
+  letter-spacing: 0.04em; text-transform: uppercase;
+}
+.nadnaslov {
+  font: 700 0.78rem/1.2 var(--f-naslov); letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--oranzna-tekst); margin: 0 0 10px;
+}
+.uvod { color: var(--tekst-2); max-width: 62ch; margin: 14px 0 0; }
+
+/* ---------- glava ---------- */
+.glava {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20;
+  background: var(--oranzna); color: var(--na-oranzni);
+}
+.glava .ovoj { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 60px; flex-wrap: wrap; }
+.znak { font: 700 1.7rem/1 var(--f-rokopis); text-decoration: none; white-space: nowrap; }
+.meni { display: flex; gap: 4px 22px; flex-wrap: wrap; font: 600 0.82rem/1 var(--f-naslov); letter-spacing: 0.08em; text-transform: uppercase; }
+.meni a { text-decoration: none; padding: 8px 0; border-bottom: 2px solid transparent; }
+.meni a:hover { border-bottom-color: currentColor; }
+@media (max-width: 640px) {
+  .glava .ovoj { padding-block: 8px; }
+  .meni { width: 100%; justify-content: space-between; gap: 4px 12px; font-size: 0.74rem; }
+}
+
+/* ---------- uvodni pas ---------- */
+.pas { background: var(--oranzna); color: var(--na-oranzni); position: relative; }
+.pas .ovoj {
+  display: grid; grid-template-columns: 1fr 1.15fr; gap: 40px; align-items: center;
+  padding-block: 40px 30px;
+}
+.pas h1 {
+  font: 700 clamp(3.4rem, 2.2rem + 5vw, 6rem)/0.95 var(--f-rokopis);
+  letter-spacing: 0.02em; margin: 6px 0 18px;
+}
+.pas .nadnaslov { color: var(--na-oranzni); opacity: 0.92; }
+.pas p { margin: 0; max-width: 40ch; font-size: 1.05rem; }
+.vrednote {
+  display: flex; flex-wrap: wrap; gap: 6px 18px; margin: 22px 0 26px;
+  font: 500 1.05rem/1.3 var(--f-naslov); letter-spacing: 0.12em;
+}
+.gumbi { display: flex; flex-wrap: wrap; gap: 12px; }
+.gumb {
+  display: inline-flex; align-items: center; justify-content: center; min-height: 46px;
+  padding: 0 22px; border-radius: 999px; text-decoration: none; cursor: pointer;
+  font: 700 0.85rem/1 var(--f-naslov); letter-spacing: 0.08em; text-transform: uppercase;
+  border: 2px solid var(--na-oranzni); background: transparent; color: var(--na-oranzni);
+}
+.gumb.poln { background: var(--na-oranzni); color: #B5432A; }
+.gumb:hover { transform: translateY(-1px); }
+@media (prefers-reduced-motion: reduce) { .gumb:hover { transform: none; } }
+.fotografija-ekipe {
+  border-radius: 46% 54% 8px 8px / 22% 22% 8px 8px; overflow: hidden;
+  aspect-ratio: 1.38; max-width: 100%; background: rgba(255,255,255,0.15);
+}
+.fotografija-ekipe img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 60%; }
+.val { display: block; width: 100%; height: clamp(40px, 6vw, 90px); background: var(--oranzna); }
+.val path { fill: var(--ozadje); }
+@media (max-width: 860px) {
+  .pas .ovoj { grid-template-columns: 1fr; gap: 26px; padding-block: 28px 10px; }
+}
+
+/* ---------- razdelki ---------- */
+.razdelek { padding-block: clamp(48px, 7vw, 96px); }
+.razdelek.tonirano { background: var(--ozadje-2); }
+
+/* kandidatka */
+.kandidatka { display: grid; grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr); gap: clamp(28px, 5vw, 64px); align-items: start; }
+.portret { max-width: 440px; }
+.portret .okvir { position: relative; }
+.portret img { border-radius: 8px 120px 8px 8px; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
+.stevilka {
+  position: absolute; right: 12px; bottom: 16px; width: 104px; height: 104px; border-radius: 50%;
+  background: #FFFFFF; color: var(--oranzna); display: grid; place-items: center;
+  font: 800 4.2rem/1 var(--f-naslov); box-shadow: 0 6px 24px rgba(0,0,0,0.18);
+}
+.portret figcaption { margin-top: 14px; font-size: 0.88rem; color: var(--tekst-2); }
+.nagovor h3 { font: 700 1.15rem/1.3 var(--f-naslov); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 14px; }
+.nagovor p { margin: 0 0 14px; max-width: 64ch; }
+.podpis { font: 700 2.2rem/1 var(--f-rokopis); color: var(--oranzna-tekst); margin-top: 6px; }
+.dejstva { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin: 26px 0; padding: 0; list-style: none; }
+.dejstva li { border-top: 3px solid var(--oranzna); padding-top: 10px; font-size: 0.9rem; color: var(--tekst-2); line-height: 1.35; }
+.dejstva b { display: block; font: 800 2rem/1.1 var(--f-naslov); color: var(--tekst); font-variant-numeric: tabular-nums; }
+.vodilo { background: var(--ozadje-2); border-radius: 8px; padding: 18px 22px; margin: 22px 0; }
+.vodilo p { margin: 0; }
+.vodilo strong { color: var(--oranzna-tekst); }
+@media (max-width: 860px) { .kandidatka { grid-template-columns: 1fr; } .portret { max-width: 300px; } .stevilka { width: 80px; height: 80px; font-size: 3.2rem; } }
+@media (max-width: 420px) { .dejstva b { font-size: 1.6rem; } }
+
+/* program */
+.vizija { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin: 34px 0 44px; }
+.vizija div { background: var(--oranzna); color: var(--na-oranzni); border-radius: 8px; padding: 20px; }
+.vizija h3 { font: 800 1.25rem/1.2 var(--f-naslov); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 8px; }
+.vizija p { margin: 0; font-size: 0.95rem; line-height: 1.5; }
+@media (max-width: 760px) { .vizija { grid-template-columns: 1fr; } }
+.tocke { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; counter-reset: tocka; }
+.tocka {
+  background: var(--ozadje); border: 1px solid var(--crta); border-radius: 8px; padding: 24px 24px 22px;
+  min-width: 0;
+}
+.tocka header { display: flex; gap: 14px; align-items: flex-start; margin-bottom: 10px; }
+.tocka .st {
+  flex: none; width: 40px; height: 40px; border-radius: 50%; background: var(--oranzna); color: var(--na-oranzni);
+  display: grid; place-items: center; font: 800 1rem/1 var(--f-naslov); font-variant-numeric: tabular-nums;
+}
+.tocka h3 { font: 700 1.08rem/1.3 var(--f-naslov); letter-spacing: 0.04em; text-transform: uppercase; padding-top: 8px; }
+.tocka p { margin: 0 0 10px; font-size: 0.97rem; }
+.tocka ul { margin: 6px 0 12px; padding-left: 1.1em; font-size: 0.95rem; color: var(--tekst-2); }
+.tocka li { margin: 2px 0; }
+.tocka li::marker { color: var(--oranzna-tekst); }
+.tocka .poanta { font-weight: 600; color: var(--tekst); border-top: 1px solid var(--crta); padding-top: 12px; margin: 14px 0 0; }
+@media (max-width: 760px) { .tocke { grid-template-columns: 1fr; } }
+
+/* zaveza */
+.zaveza { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(24px, 5vw, 64px); align-items: center; }
+.zaveza ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.zaveza li {
+  font: 700 clamp(1.05rem, 0.9rem + 0.7vw, 1.4rem)/1.3 var(--f-naslov); padding: 14px 0 14px 18px;
+  border-left: 4px solid var(--oranzna);
+}
+.zaveza .poudarek { font: 700 2.4rem/1.1 var(--f-rokopis); color: var(--oranzna-tekst); margin: 18px 0 0; }
+@media (max-width: 760px) { .zaveza { grid-template-columns: 1fr; } }
+
+/* lista */
+.enota { margin-top: 44px; }
+.enota h3 {
+  font: 700 1.1rem/1.3 var(--f-naslov); letter-spacing: 0.06em; text-transform: uppercase;
+  display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; padding-bottom: 10px; border-bottom: 2px solid var(--oranzna);
+}
+.enota h3 span { color: var(--oranzna-tekst); }
+.kandidati { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; margin-top: 20px; }
+.kandidat { background: var(--ozadje); border: 1px solid var(--crta); border-radius: 8px; padding: 22px 20px 18px; min-width: 0; display: flex; flex-direction: column; }
+.kandidat .glava-k { display: flex; align-items: center; gap: 16px; }
+.kandidat .slika { position: relative; flex: none; width: 96px; height: 96px; }
+.kandidat .slika img { width: 96px; height: 96px; border-radius: 50%; object-fit: cover; }
+.kandidat .st {
+  position: absolute; right: -6px; top: -4px; width: 36px; height: 36px; border-radius: 50%;
+  background: var(--oranzna); color: #FFFFFF; border: 3px solid var(--ozadje);
+  display: grid; place-items: center; font: 800 0.95rem/1 var(--f-naslov); font-variant-numeric: tabular-nums;
+}
+.kandidat h4 { margin: 0; font: 700 1.05rem/1.25 var(--f-naslov); }
+.kandidat .poklic { margin: 4px 0 0; font-size: 0.86rem; line-height: 1.4; color: var(--tekst-2); }
+.kandidat details { margin-top: 16px; border-top: 1px solid var(--crta); padding-top: 10px; }
+.kandidat summary {
+  cursor: pointer; font: 600 0.8rem/1.4 var(--f-naslov); letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--oranzna-tekst); list-style: none; display: flex; justify-content: space-between; align-items: center; padding: 6px 0;
+}
+.kandidat summary::-webkit-details-marker { display: none; }
+.kandidat summary::after { content: "+"; font-size: 1.2rem; }
+.kandidat details[open] summary::after { content: "–"; }
+.kandidat .opis { font-size: 0.93rem; margin: 8px 0 0; }
+.kandidat .opis p { margin: 0 0 10px; }
+.kandidat .opis .kmalu { color: var(--tekst-2); font-style: italic; }
+.opomba { font-size: 0.88rem; color: var(--tekst-2); margin-top: 28px; }
+@media (max-width: 900px) { .kandidati { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 600px) { .kandidati { grid-template-columns: 1fr; } }
+
+/* pobude */
+.pobude { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: clamp(28px, 5vw, 64px); align-items: start; }
+.obrazec { background: var(--ozadje); border: 1px solid var(--crta); border-radius: 8px; padding: clamp(20px, 3vw, 32px); display: grid; gap: 16px; }
+.vrsta { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+@media (max-width: 560px) { .vrsta { grid-template-columns: 1fr; } }
+.polje { display: grid; gap: 6px; min-width: 0; }
+.polje label { font: 600 0.82rem/1.3 var(--f-naslov); letter-spacing: 0.04em; }
+.polje label small { font-weight: 500; color: var(--tekst-2); letter-spacing: 0; }
+.polje input, .polje select, .polje textarea {
+  width: 100%; font: 400 1rem/1.4 var(--f-besedilo); color: var(--tekst); background: var(--ozadje-2);
+  border: 1px solid var(--crta); border-radius: 6px; padding: 12px 14px;
+}
+.polje textarea { min-height: 150px; resize: vertical; }
+.polje input:focus, .polje select:focus, .polje textarea:focus { outline: 2px solid var(--oranzna); outline-offset: 0; border-color: transparent; }
+.soglasje { display: flex; gap: 10px; align-items: flex-start; font-size: 0.88rem; color: var(--tekst-2); line-height: 1.5; }
+.soglasje input { margin-top: 4px; width: 18px; height: 18px; accent-color: var(--oranzna); flex: none; }
+.past { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.oddaj {
+  justify-self: start; min-height: 50px; padding: 0 28px; border: 0; border-radius: 999px; cursor: pointer;
+  background: var(--oranzna); color: #FFFFFF; font: 700 0.9rem/1 var(--f-naslov); letter-spacing: 0.08em; text-transform: uppercase;
+}
+.oddaj:disabled { opacity: 0.6; cursor: progress; }
+.stanje { margin: 0; padding: 12px 14px; border-radius: 6px; font-size: 0.93rem; }
+.stanje.ok { background: #E3F2E6; color: #1E5A2B; }
+.stanje.napaka { background: #FBE4DF; color: #8A2A16; }
+.zasebnost { font-size: 0.85rem; color: var(--tekst-2); margin-top: 18px; max-width: 52ch; }
+
+/* noga */
+.noga { background: var(--oranzna); color: var(--na-oranzni); }
+.noga .ovoj { padding-block: 36px 40px; display: flex; flex-wrap: wrap; gap: 18px 40px; justify-content: space-between; align-items: flex-end; }
+.noga .slogan { font: 700 2.6rem/1 var(--f-rokopis); margin: 0; }
+.noga p { margin: 0; font-size: 0.9rem; }
+.noga .oznaka { font-size: 0.78rem; opacity: 0.9; }
+</style>
+<meta property="og:type" content="website">
+<meta property="og:title" content="Skupaj za Jurij! Simona Bauman za županjo">
+<meta property="og:description" content="Simona Bauman, kandidatka za županjo Občine Sveti Jurij v Slovenskih goricah, in lista Skupaj za Jurij. Lokalne volitve 15. 11. 2026.">
+<meta property="og:image" content="slike/deljenje.jpg">
+<meta name="theme-color" content="#E05E3C">
+<link rel="icon" type="image/png" href="slike/favicon.png">
+<link rel="apple-touch-icon" href="slike/apple-touch-icon.png">
+</head>
+<body>
+<header class="glava">
+  <div class="ovoj">
+    <a class="znak" href="#zacetek">Skupaj za Jurij!</a>
+    <nav class="meni" aria-label="Glavni meni">
+      <a href="#kandidatka">Kandidatka</a>
+      <a href="#program">Program</a>
+      <a href="#lista">Lista</a>
+      <a href="#pobude">Pobude</a>
+    </nav>
+  </div>
+</header>
+
+<main id="zacetek">
+  <section class="pas" aria-labelledby="naslov">
+    <div class="ovoj">
+      <div>
+        <p class="nadnaslov">Lokalne volitve · 15. november 2026</p>
+        <h1 id="naslov">Skupaj za Jurij!</h1>
+        <p>Simona Bauman, kandidatka za županjo Občine Sveti Jurij v Slovenskih goricah, in neodvisna lista kandidatov za občinski svet.</p>
+        <div class="vrednote" aria-label="Naše vodilo"><span>Pošteno.</span><span>Odgovorno.</span><span>Razvojno.</span></div>
+        <div class="gumbi">
+          <a class="gumb poln" href="#program">Preberite program</a>
+          <a class="gumb" href="#pobude">Pošljite pobudo</a>
+        </div>
+      </div>
+      <div class="fotografija-ekipe">
+        <img src="slike/ekipa.jpg" alt="Simona Bauman s kandidatkami in kandidati liste Skupaj za Jurij pred kulturnim domom" width="1800" height="1300">
+      </div>
+    </div>
+    <svg class="val" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true"><path d="M0,90 L0,55 C320,5 720,0 1040,30 C1220,47 1340,62 1440,40 L1440,90 Z"/></svg>
+  </section>
+
+  <!-- ===================== KANDIDATKA ===================== -->
+  <section class="razdelek" id="kandidatka" aria-labelledby="kandidatka-naslov">
+    <div class="ovoj kandidatka">
+      <figure class="portret" style="margin:0">
+        <div class="okvir"><img src="slike/simona-bauman.jpg" alt="Simona Bauman" width="900" height="1125">
+        <div class="stevilka" aria-hidden="true">1</div></div>
+        <figcaption>Simona Bauman, univ. dipl. prav. Na glasovnici za župana številka 1.</figcaption>
+      </figure>
+      <div class="nagovor">
+        <p class="nadnaslov">Kandidatka za županjo</p>
+        <h2 id="kandidatka-naslov">Simona Bauman</h2>
+        <ul class="dejstva">
+          <li><b>30 let</b>v javni upravi</li>
+          <li><b>20 let</b>v občinski upravi</li>
+          <li><b>35 let</b>doma v naši občini</li>
+        </ul>
+        <h3>Spoštovane Jurovčanke, spoštovani Jurovčani!</h3>
+        <p>Po tehtnem premisleku sem se odločila za kandidaturo za županjo naše občine. K tej odločitvi me vodijo dolgoletne izkušnje, dobro poznavanje delovanja občine in iskrena želja prispevati k njenemu nadaljnjemu razvoju.</p>
+        <p>Za menoj je 30 let delovnih izkušenj v javni upravi, od tega 20 let v občinski upravi. Danes opravljam delo direktorice občinske uprave Občine Sv. Jurij v Slovenskih goricah. Našo občino poznam tudi osebno, saj je moj dom že 35 let.</p>
+        <p>Verjamem, da lahko s strokovnim znanjem, odgovornim vodenjem, premišljenim načrtovanjem in sodelovanjem dosežemo konkretne rezultate. Želim si občine, v kateri bomo prisluhnili ljudem, spoštovali različna mnenja in ustvarjali dobre pogoje za življenje vseh generacij.</p>
+        <div class="vodilo">
+          <p><strong>Moje vodilo:</strong> POŠTENO do ljudi. ODGOVORNO pri sprejemanju odločitev. RAZVOJNO usmerjeno v prihodnost.</p>
+        </div>
+        <p><strong>Ker našo občino poznam. Ker z njo živim in delam. Ker želim svoje znanje in izkušnje nameniti njenemu nadaljnjemu razvoju.</strong></p>
+        <p>Skupaj lahko ustvarjamo občino, v kateri bomo radi živeli, delali in gradili prihodnost.</p>
+        <p class="podpis">Simona Bauman</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PROGRAM ===================== -->
+  <section class="razdelek tonirano" id="program" aria-labelledby="program-naslov">
+    <div class="ovoj">
+      <p class="nadnaslov">Program kandidatke in liste Skupaj za Jurij</p>
+      <h2 id="program-naslov">Naš program</h2>
+      <p class="uvod">Občino želimo voditi odprto, pregledno in v stalnem dialogu z občankami in občani. Verjamemo, da lahko z izkušnjami, znanjem in sodelovanjem uspešno odgovorimo na izzive vse zahtevnejšega časa.</p>
+
+      <div class="vizija">
+        <div><h3>Pošteno</h3><p>Do vsake občanke in vsakega občana, do vseh krajev in naselij ter pri ravnanju z javnim denarjem.</p></div>
+        <div><h3>Odgovorno</h3><p>S premišljenimi odločitvami, dobro pripravljenimi projekti, jasnimi prioritetami in odgovornostjo za rezultate.</p></div>
+        <div><h3>Razvojno</h3><p>Z novimi priložnostmi za gospodarstvo, mlade, družine, starejše, društva in celotno lokalno skupnost.</p></div>
+      </div>
+
+      <div class="tocke">
+        <article class="tocka">
+          <header><span class="st">1</span><h3>Urejena infrastruktura za vse</h3></header>
+          <p>Kakovostna infrastruktura je temelj kakovostnega življenja. Zavzemala se bom za načrtno, pregledno in enakomerno vlaganje v občinsko infrastrukturo ter za določitev jasnih prioritet glede na potrebe posameznih delov občine.</p>
+          <p>Posebno pozornost bom namenila:</p>
+          <ul>
+            <li>obnovi in vzdrževanju občinskih cest;</li>
+            <li>izboljšanju prometne varnosti;</li>
+            <li>razvoju kolesarskih povezav;</li>
+            <li>urejanju javnih površin;</li>
+            <li>izboljšanju vodovodnega omrežja;</li>
+            <li>zamenjavi dotrajanih vodovodnih cevovodov;</li>
+            <li>izgradnji novih vodovodnih odsekov tam, kjer so potrebni.</li>
+          </ul>
+          <p>Pri večjih infrastrukturnih projektih bomo aktivno iskali državna in evropska sredstva ter druge zunanje vire financiranja.</p>
+          <p class="poanta">Naš cilj je jasen: varne ceste, zanesljiva oskrba z vodo in urejen javni prostor v vseh delih občine.</p>
+        </article>
+
+        <article class="tocka">
+          <header><span class="st">2</span><h3>Šport in urejen športni park</h3></header>
+          <p>Šport mora biti dostopen vsem generacijam, še posebej otrokom in mladim. Posebej se bom zavzemala za <strong>ureditev lastninskih razmerij športnih objektov v Športnem parku</strong>. Urejeno lastništvo je pomemben predpogoj za dolgoročno načrtovanje vlaganj, pridobivanje sredstev in nadaljnji razvoj športne infrastrukture.</p>
+          <p>Ob tem bom podpirala:</p>
+          <ul>
+            <li>športne programe za otroke in mladino;</li>
+            <li>delovanje športnih društev;</li>
+            <li>razvoj rekreativnega športa;</li>
+            <li>izboljševanje športnih površin;</li>
+            <li>povezovanje športa, društev in lokalne skupnosti.</li>
+          </ul>
+          <p class="poanta">Želim, da bo Športni park prostor, v katerem bodo svoje mesto našli otroci, mladi, rekreativci in športna društva.</p>
+        </article>
+
+        <article class="tocka">
+          <header><span class="st">3</span><h3>Plateisovina – nova razvojna priložnost</h3></header>
+          <p>Zavzemala se bom za izgradnjo <strong>sodobnega poslovnega objekta na območju Plateisovine</strong>, namenjenega mirnim dejavnostim, ki bodo ustvarjale nova kakovostna delovna mesta, spodbujale podjetništvo in prispevale h gospodarskemu razvoju občine, hkrati pa ohranjale visoko kakovost bivanja.</p>
+          <p>Objekt bo namenjen dejavnostim, ki:</p>
+          <ul>
+            <li>ne povzročajo prekomernega hrupa;</li>
+            <li>ne povzročajo nedopustnih emisij;</li>
+            <li>ne povzročajo povečanih okoljskih obremenitev;</li>
+            <li>omogočajo ustvarjanje kakovostnih delovnih mest.</li>
+          </ul>
+          <p>Posebno priložnost vidim tudi v zagotovitvi prostorov za <strong>zdravstvene, terapevtske in druge strokovne storitve</strong>, ki jih občani potrebujejo. Želim ustvariti razvojno območje, ki bo občini prineslo nove priložnosti, vendar brez poslabšanja kakovosti bivanja.</p>
+          <p class="poanta">Razvoj da – vendar premišljen in odgovoren.</p>
+        </article>
+
+        <article class="tocka">
+          <header><span class="st">4</span><h3>Močno lokalno gospodarstvo in kmetijstvo</h3></header>
+          <p>Aktivno se bom zavzemala za ustvarjanje spodbudnega okolja za razvoj gospodarstva in nova delovna mesta. Posebno pozornost bom namenila <strong>širitvi poslovno-obrtne cone</strong>, saj želim našim podjetnikom omogočiti boljše pogoje za rast, razvoj in širitev njihove dejavnosti. Občina mora biti partner lokalnemu gospodarstvu.</p>
+          <p>Zavzemala se bom za:</p>
+          <ul>
+            <li>boljše pogoje za podjetnike in obrtnike;</li>
+            <li>razvoj poslovno-obrtne cone;</li>
+            <li>spodbujanje podjetništva;</li>
+            <li>povezovanje lokalnega gospodarstva;</li>
+            <li>ustvarjanje novih delovnih mest;</li>
+            <li>promocijo lokalnih izdelkov in storitev.</li>
+          </ul>
+          <p>Pomemben del našega gospodarstva je tudi <strong>kmetijstvo</strong>. Del proračunskih sredstev bom namenila finančni podpori kmetijstvu ter spodbujanju lokalne pridelave in domačih izdelkov. Podpiram razvoj slovenskega kmetijstva, saj so kmetje ključni za zagotavljanje lokalno pridelane hrane, ohranjanje kulturne krajine in življenje na podeželju. Zavedati se moramo, da vlaganje v kmetijstvo pomeni vlaganje v našo prehransko varnost, tradicijo in prihodnost podeželja.</p>
+          <p class="poanta">Kar ustvarimo doma, naj bo prepoznano, cenjeno in čim bolj uporabljeno tudi doma.</p>
+        </article>
+
+        <article class="tocka">
+          <header><span class="st">5</span><h3>Boljša dostopnost storitev</h3></header>
+          <p>Kakovost življenja ni odvisna samo od infrastrukture, temveč tudi od tega, ali imajo občani v svojem okolju dostop do osnovnih storitev. Prizadevala si bom za izboljšanje vsakodnevne oskrbe občanov z zagotovitvijo novih storitev, ki jih naša skupnost potrebuje.</p>
+          <p>Zavzemala se bom za:</p>
+          <ul>
+            <li>ureditev možnosti za odprtje nove trgovine;</li>
+            <li>namestitev bankomata;</li>
+            <li>izboljšanje dostopnosti zdravstvenih storitev;</li>
+            <li>podporo terapevtskim in drugim strokovnim storitvam;</li>
+            <li>razvoj storitev, ki bodo olajšale vsakodnevno življenje občanov.</li>
+          </ul>
+          <p class="poanta">Osnovne storitve morajo biti čim bolj dostopne ljudem v njihovem domačem okolju.</p>
+        </article>
+
+        <article class="tocka">
+          <header><span class="st">6</span><h3>Turizem, dogodki in prepoznavnost občine</h3></header>
+          <p>Turizem predstavlja pomembno priložnost za razvoj naše občine, ustvarjanje novih možnosti in povezovanje lokalnih potencialov. Zavzemala se bom za izgradnjo <strong>turistično-prireditvenega prostora v središču občine</strong>, ki bo namenjen:</p>
+          <ul>
+            <li>druženju občanov;</li>
+            <li>organizaciji kulturnih in drugih dogodkov;</li>
+            <li>turističnim prireditvam;</li>
+            <li>predstavitvam lokalnih ponudnikov;</li>
+            <li>aktivnostim društev;</li>
+            <li>povezovanju občanov in obiskovalcev.</li>
+          </ul>
+          <p>Takšen prostor bo prispeval k večji prepoznavnosti občine, razvoju turizma, podpori lokalnim ponudnikom ter ohranjanju kulturnih in družabnih tradicij.</p>
+          <p>Prizadevala si bom tudi za <strong>pridobitev in ureditev prostora v kletnih prostorih občinske stavbe za protokolarne namene</strong>: za sprejeme, srečanja, predstavitve, protokolarne dogodke, sodelovanje s predstavniki institucij ter dogodke za občane in društva.</p>
+          <p class="poanta">Želim občino, ki bo znala svoje potenciale bolje povezati in jih predstaviti tudi širše.</p>
+        </article>
+
+        <article class="tocka">
+          <header><span class="st">7</span><h3>Starejši – aktiven in pomemben del naše skupnosti</h3></header>
+          <p>Starejši so pomemben del naše občine in nosilci znanja, izkušenj in tradicije. Zavzemala se bom za razvoj programov, ki bodo starejšim omogočali kakovostnejše in bolj aktivno življenje.</p>
+          <p>Podpirala bom:</p>
+          <ul>
+            <li>programe za starejše;</li>
+            <li>medgeneracijsko sodelovanje;</li>
+            <li>dejavnosti za druženje;</li>
+            <li>pomoč pri vsakodnevnih izzivih;</li>
+            <li>aktivnosti za preprečevanje osamljenosti;</li>
+            <li>povezovanje starejših z društvi in drugimi organizacijami;</li>
+            <li>izboljšanje dostopnosti socialnih in zdravstvenih storitev.</li>
+          </ul>
+          <p class="poanta">Želim občino, v kateri se človek počuti vključenega in spoštovanega v vseh obdobjih življenja.</p>
+        </article>
+
+        <article class="tocka">
+          <header><span class="st">8</span><h3>Mladi in otroci – naša prihodnost</h3></header>
+          <p>Mladi so pomemben del naše skupnosti in nosilci prihodnjega razvoja občine. Spodbujala bom programe za mlade, mladinsko ustvarjanje, športne in kulturne dejavnosti, sodelovanje med občino, mladimi in lokalnimi organizacijami ter vključevanje mladih v življenje občine.</p>
+          <p>Posebno pozornost bomo namenili tudi otrokom. Zavzemala se bom za:</p>
+          <ul>
+            <li>urejene in varne vrtce;</li>
+            <li>kakovostno osnovnošolsko okolje;</li>
+            <li>razvoj in urejanje otroških igrišč;</li>
+            <li>varne površine za otroke;</li>
+            <li>možnosti za ustvarjalno preživljanje prostega časa;</li>
+            <li>povezovanje otrok in mladih s športom, kulturo in društvenim življenjem.</li>
+          </ul>
+          <p class="poanta">Naša odgovornost je, da otrokom ustvarimo varno in spodbudno okolje za odraščanje, mladim pa omogočimo, da svojo prihodnost gradijo v domačem okolju.</p>
+        </article>
+
+        <article class="tocka">
+          <header><span class="st">9</span><h3>Zelen, urejen in trajnosten Sveti Jurij</h3></header>
+          <p>Naša občina ima pomembno prednost – zeleno in kakovostno okolje. To moramo ohraniti.</p>
+          <p>Zavzemala se bom za:</p>
+          <ul>
+            <li>več urejenih zelenih površin;</li>
+            <li>kakovostnejše javne prostore;</li>
+            <li>skrb za okolico naselij;</li>
+            <li>nove zasaditve;</li>
+            <li>posebno ureditev in ozelenitev trškega jedra;</li>
+            <li>odgovorno ravnanje z naravnimi viri;</li>
+            <li>nadaljnji razvoj projekta »Zeleni Jurij«;</li>
+            <li>energetsko učinkovite in trajnostne rešitve.</li>
+          </ul>
+          <p>Razvoj občine mora potekati tako, da bo naše okolje kakovostno tudi za prihodnje generacije.</p>
+          <p class="poanta">Zeleno okolje ni ovira za razvoj. Je ena naših največjih razvojnih prednosti.</p>
+        </article>
+
+        <article class="tocka">
+          <header><span class="st">10</span><h3>Uravnotežen razvoj celotne občine</h3></header>
+          <p>Zavzemala se bom za uravnotežen razvoj celotne občine. Razvoj ne sme biti skoncentriran samo na en del občine. Vsak kraj in vsako naselje ima svoje potrebe, posebnosti in potenciale.</p>
+          <p>Zato želim:</p>
+          <ul>
+            <li>načrtovati razvoj dolgoročno;</li>
+            <li>določiti jasne razvojne prioritete;</li>
+            <li>zagotavljati enakomerno vlaganje;</li>
+            <li>poslušati potrebe posameznih krajev;</li>
+            <li>povezovati različne dele občine;</li>
+            <li>pri večjih projektih iskati zunanje vire financiranja;</li>
+            <li>spremljati izvedbo projektov in o njej obveščati občane.</li>
+          </ul>
+          <p>Moje vodilo bo, da bomo danes sprejemali odločitve, ki bodo koristile tudi prihodnjim generacijam.</p>
+          <p class="poanta">Razvoj mora biti premišljen, odgovoren in v korist vseh občanov.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== ZAVEZA ===================== -->
+  <section class="razdelek" aria-labelledby="zaveza-naslov">
+    <div class="ovoj zaveza">
+      <div>
+        <p class="nadnaslov">Moja zaveza občankam in občanom</p>
+        <h2 id="zaveza-naslov">Brez praznih obljub</h2>
+        <p class="uvod">Kot neodvisna kandidatka za županjo ne želim graditi kampanje na praznih obljubah. Graditi jo želim na znanju, izkušnjah, delu in odgovornosti.</p>
+        <p class="uvod">Zavedam se, da župan ne more vsega narediti sam. Za uspešno občino so potrebni sodelovanje občinskega sveta, občinske uprave, društev, gospodarstva, krajevnih skupnosti in predvsem občank ter občanov.</p>
+      </div>
+      <div>
+        <p class="nadnaslov">Zato bom kot županja</p>
+        <ol>
+          <li>poslušala, preden bom odločala;</li>
+          <li>načrtovala, preden bom investirala;</li>
+          <li>sodelovala, namesto da bi delila;</li>
+          <li>prevzela odgovornost za sprejete odločitve.</li>
+        </ol>
+        <p class="poudarek">Naša občina je naš skupni dom.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== LISTA =====================
+       Predstavitev kandidata dodaš tako, da v <div class="opis"> zamenjaš
+       odstavek z razredom "kmalu" z enim ali več odstavki <p>...</p>.
+  -->
+  <section class="razdelek tonirano" id="lista" aria-labelledby="lista-naslov">
+    <div class="ovoj">
+      <p class="nadnaslov">Kandidati za občinski svet</p>
+      <h2 id="lista-naslov">Lista Skupaj za Jurij</h2>
+      <p class="uvod">Na letošnjih lokalnih volitvah kandidiramo kot neodvisna lista, saj verjamemo, da lahko s sodelovanjem, povezovanjem in skupnimi močmi naredimo veliko dobrega za naš kraj.</p>
+
+      <div class="enota">
+        <h3><span>Volilna enota 1</span> Jurovski Dol in Malna</h3>
+        <div class="kandidati">
+          <!-- KANDIDAT: Tanja Lavrenčič -->
+          <article class="kandidat">
+            <div class="glava-k">
+              <div class="slika"><img src="slike/tanja-lavrencic.jpg" alt="" width="96" height="96"><span class="st" aria-label="Številka na glasovnici">7</span></div>
+              <div><h4>Tanja Lavrenčič</h4><p class="poklic">frizerka, samostojna podjetnica</p></div>
+            </div>
+            <details><summary>Predstavitev</summary><div class="opis">
+              <p class="kmalu">Predstavitev kandidatke bo objavljena v kratkem.</p>
+            </div></details>
+          </article>
+          <!-- KANDIDAT: Mirko Kojc -->
+          <article class="kandidat">
+            <div class="glava-k">
+              <div class="slika"><img src="slike/mirko-kojc.jpg" alt="" width="96" height="96"><span class="st" aria-label="Številka na glasovnici">1</span></div>
+              <div><h4>Mirko Kojc</h4><p class="poklic">komunalni inženir, strokovni sodelavec za promet in komunalne zadeve</p></div>
+            </div>
+            <details><summary>Predstavitev</summary><div class="opis">
+              <p class="kmalu">Predstavitev kandidata bo objavljena v kratkem.</p>
+            </div></details>
+          </article>
+          <!-- KANDIDAT: Marija Divjak -->
+          <article class="kandidat">
+            <div class="glava-k">
+              <div class="slika"><img src="slike/marija-divjak.jpg" alt="" width="96" height="96"><span class="st" aria-label="Številka na glasovnici">10</span></div>
+              <div><h4>Marija Divjak</h4><p class="poklic">višja upravna delavka, upokojenka</p></div>
+            </div>
+            <details><summary>Predstavitev</summary><div class="opis">
+              <p class="kmalu">Predstavitev kandidatke bo objavljena v kratkem.</p>
+            </div></details>
+          </article>
+        </div>
+      </div>
+
+      <div class="enota">
+        <h3><span>Volilna enota 2</span> Partinje in Varda</h3>
+        <div class="kandidati">
+          <!-- KANDIDAT: Matej Kren -->
+          <article class="kandidat">
+            <div class="glava-k">
+              <div class="slika"><img src="slike/matej-kren.jpg" alt="" width="96" height="96"><span class="st" aria-label="Številka na glasovnici">8</span></div>
+              <div><h4>Matej Kren</h4><p class="poklic">doktor elektrotehnike, razvojni inženir</p></div>
+            </div>
+            <details><summary>Predstavitev</summary><div class="opis">
+              <p class="kmalu">Predstavitev kandidata bo objavljena v kratkem.</p>
+            </div></details>
+          </article>
+          <!-- KANDIDAT: Sabina Kacijan -->
+          <article class="kandidat">
+            <div class="glava-k">
+              <div class="slika"><img src="slike/sabina-kacijan.jpg" alt="" width="96" height="96"><span class="st" aria-label="Številka na glasovnici">1</span></div>
+              <div><h4>Sabina Kacijan</h4><p class="poklic">diplomirana medicinska sestra</p></div>
+            </div>
+            <details><summary>Predstavitev</summary><div class="opis">
+              <p class="kmalu">Predstavitev kandidatke bo objavljena v kratkem.</p>
+            </div></details>
+          </article>
+          <!-- KANDIDAT: Uroš Vuzem -->
+          <article class="kandidat">
+            <div class="glava-k">
+              <div class="slika"><img src="slike/uros-vuzem.jpg" alt="" width="96" height="96"><span class="st" aria-label="Številka na glasovnici">3</span></div>
+              <div><h4>Uroš Vuzem</h4><p class="poklic">elektrotehnik računalništva, izkušeni inženir podatkovnih skladišč</p></div>
+            </div>
+            <details><summary>Predstavitev</summary><div class="opis">
+              <p class="kmalu">Predstavitev kandidata bo objavljena v kratkem.</p>
+            </div></details>
+          </article>
+        </div>
+      </div>
+
+      <div class="enota">
+        <h3><span>Volilna enota 3</span> Gasteraj in Žitence</h3>
+        <div class="kandidati">
+          <!-- KANDIDAT: Suzana Mihelič -->
+          <article class="kandidat">
+            <div class="glava-k">
+              <div class="slika"><img src="slike/suzana-mihelic.jpg" alt="" width="96" height="96"><span class="st" aria-label="Številka na glasovnici">9</span></div>
+              <div><h4>Suzana Mihelič</h4><p class="poklic">frizerka, samostojna podjetnica</p></div>
+            </div>
+            <details><summary>Predstavitev</summary><div class="opis">
+              <p class="kmalu">Predstavitev kandidatke bo objavljena v kratkem.</p>
+            </div></details>
+          </article>
+          <!-- KANDIDAT: Andrej Dvoršak -->
+          <article class="kandidat">
+            <div class="glava-k">
+              <div class="slika"><img src="slike/andrej-dvorsak.jpg" alt="" width="96" height="96"><span class="st" aria-label="Številka na glasovnici">7</span></div>
+              <div><h4>Andrej Dvoršak</h4><p class="poklic">diplomirani inženir agronomije, geodetski tehnik</p></div>
+            </div>
+            <details><summary>Predstavitev</summary><div class="opis">
+              <p class="kmalu">Predstavitev kandidata bo objavljena v kratkem.</p>
+            </div></details>
+          </article>
+          <!-- KANDIDAT: Tamara Merkan -->
+          <article class="kandidat">
+            <div class="glava-k">
+              <div class="slika"><img src="slike/tamara-merkan.jpg" alt="" width="96" height="96"><span class="st" aria-label="Številka na glasovnici">2</span></div>
+              <div><h4>Tamara Merkan</h4><p class="poklic">ekonomski tehnik, prodajalka</p></div>
+            </div>
+            <details><summary>Predstavitev</summary><div class="opis">
+              <p class="kmalu">Predstavitev kandidatke bo objavljena v kratkem.</p>
+            </div></details>
+          </article>
+        </div>
+      </div>
+
+      <p class="opomba">Številka ob fotografiji je številka kandidata na glasovnici v njegovi volilni enoti.</p>
+    </div>
+  </section>
+
+  <!-- ===================== POBUDE ===================== -->
+  <section class="razdelek" id="pobude" aria-labelledby="pobude-naslov">
+    <div class="ovoj pobude">
+      <div>
+        <p class="nadnaslov">Vaše ideje so pomembne</p>
+        <h2 id="pobude-naslov">Pošljite pobudo ali predlog</h2>
+        <p class="uvod">V nadaljevanju kampanje sem na voljo za vaše predloge, pobude in ideje. Želim si odprtega sodelovanja z občankami in občani, saj lahko le skupaj soustvarjamo občino, v kateri bomo ponosno živeli.</p>
+        <p class="uvod">Napišite, kaj bi izboljšali v svojem kraju. Vsako pobudo preberemo.</p>
+        <p class="zasebnost">Vaše podatke uporabimo samo za odgovor na pobudo in jih ne posredujemo nikomur. Po koncu volilne kampanje jih izbrišemo. Upravljavec podatkov je organizator kampanje Simona Bauman in skupina volivcev.</p>
+      </div>
+      <form class="obrazec" id="obrazec-pobude" novalidate>
+        <div class="vrsta">
+          <div class="polje">
+            <label for="ime">Ime in priimek</label>
+            <input id="ime" name="ime" type="text" autocomplete="name" required>
+          </div>
+          <div class="polje">
+            <label for="kraj">Kraj <small>(neobvezno)</small></label>
+            <input id="kraj" name="kraj" type="text" autocomplete="address-level2" placeholder="npr. Partinje">
+          </div>
+        </div>
+        <div class="vrsta">
+          <div class="polje">
+            <label for="eposta">E-pošta <small>(če želite odgovor)</small></label>
+            <input id="eposta" name="eposta" type="email" autocomplete="email">
+          </div>
+          <div class="polje">
+            <label for="tema">Tema</label>
+            <select id="tema" name="tema">
+              <option>Splošna pobuda</option>
+              <option>Infrastruktura, ceste, vodovod</option>
+              <option>Šport in Športni park</option>
+              <option>Gospodarstvo in kmetijstvo</option>
+              <option>Dostopnost storitev</option>
+              <option>Turizem in prireditve</option>
+              <option>Starejši</option>
+              <option>Mladi in otroci</option>
+              <option>Okolje in zelene površine</option>
+              <option>Moj kraj ali naselje</option>
+            </select>
+          </div>
+        </div>
+        <div class="polje">
+          <label for="sporocilo">Vaša pobuda ali predlog</label>
+          <textarea id="sporocilo" name="sporocilo" required></textarea>
+        </div>
+        <div class="past" aria-hidden="true">
+          <label for="botcheck">Tega polja ne izpolnjujte</label>
+          <input id="botcheck" name="botcheck" type="checkbox" tabindex="-1">
+        </div>
+        <label class="soglasje" for="soglasje">
+          <input id="soglasje" name="soglasje" type="checkbox" required>
+          <span>Strinjam se, da organizator kampanje moje podatke uporabi za odgovor na to pobudo.</span>
+        </label>
+        <p class="stanje" id="stanje" role="status" hidden></p>
+        <button class="oddaj" id="oddaj" type="submit">Pošlji pobudo</button>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="noga">
+  <div class="ovoj">
+    <div>
+      <p class="slogan">Skupaj za Jurij!</p>
+      <p>Simona Bauman in skupina volivcev · Pošteno. Odgovorno. Razvojno.</p>
+    </div>
+    <p class="oznaka">Politični oglas. Naročnik: Simona Bauman in skupina volivcev.</p>
+  </div>
+</footer>
+
+<script>
+/* ===== NASTAVITVE OBRAZCA =====
+   Ključ dobiš brezplačno na https://web3forms.com (vpišeš e-pošto, na katero naj prihajajo pobude).
+   Prilepi ga med narekovaje. Dokler je prazen, obrazec ne pošilja. */
+const WEB3FORMS_KLJUC = "";
+
+(function () {
+  const obrazec = document.getElementById("obrazec-pobude");
+  const stanje = document.getElementById("stanje");
+  const gumb = document.getElementById("oddaj");
+
+  function pokazi(besedilo, vrsta) {
+    stanje.textContent = besedilo;
+    stanje.className = "stanje " + vrsta;
+    stanje.hidden = false;
+  }
+
+  obrazec.addEventListener("submit", async function (e) {
+    e.preventDefault();
+    const ime = obrazec.ime.value.trim();
+    const sporocilo = obrazec.sporocilo.value.trim();
+    const eposta = obrazec.eposta.value.trim();
+    if (!ime || !sporocilo) { pokazi("Vpišite ime in priimek ter vašo pobudo.", "napaka"); return; }
+    if (eposta && !obrazec.eposta.checkValidity()) { pokazi("E-poštni naslov ni pravilen. Popravite ga ali pustite polje prazno.", "napaka"); return; }
+    if (!obrazec.soglasje.checked) { pokazi("Za pošiljanje potrdite soglasje za uporabo podatkov.", "napaka"); return; }
+    if (obrazec.botcheck.checked) return;
+    if (!WEB3FORMS_KLJUC) { pokazi("Obrazec še ni povezan s pošiljanjem pobud. Prosimo, poskusite znova v kratkem.", "napaka"); return; }
+
+    gumb.disabled = true; gumb.textContent = "Pošiljam …";
+    try {
+      const odgovor = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "Accept": "application/json" },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_KLJUC,
+          subject: "Nova pobuda: " + obrazec.tema.value,
+          from_name: "Skupaj za Jurij – spletna stran",
+          ime: ime,
+          kraj: obrazec.kraj.value.trim(),
+          email: eposta,
+          tema: obrazec.tema.value,
+          sporocilo: sporocilo,
+          botcheck: false
+        })
+      });
+      const podatki = await odgovor.json();
+      if (podatki.success) {
+        obrazec.reset();
+        pokazi("Hvala! Vaša pobuda je poslana." + (eposta ? " Odgovorili vam bomo na vpisani e-poštni naslov." : ""), "ok");
+      } else {
+        pokazi("Pobude ni bilo mogoče poslati. Poskusite znova čez nekaj minut.", "napaka");
+      }
+    } catch (napaka) {
+      pokazi("Pobude ni bilo mogoče poslati. Preverite internetno povezavo in poskusite znova.", "napaka");
+    } finally {
+      gumb.disabled = false; gumb.textContent = "Pošlji pobudo";
+    }
+  });
+})();
+</script>
+</body>
+</html>
