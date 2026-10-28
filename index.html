@@ -1266,7 +1266,7 @@
           <h3><span>Volilna enota 1</span> Jurovski Dol in Malna</h3>
           <div class="kandidati">
             <!-- KANDIDAT: Tanja Lavrenčič -->
-            <article class="kandidat">
+            <article class="kandidat" id="tanja-lavrencic">
               <div class="glava-k">
                 <div class="slika"><img src="slike/tanja-lavrencic.jpg" alt="" width="96" height="96"><span class="st" aria-label="Številka na glasovnici">7</span></div>
                 <div>
@@ -1291,7 +1291,7 @@
               </details>
             </article>
             <!-- KANDIDAT: Mirko Kojc -->
-            <article class="kandidat">
+            <article class="kandidat" id="mirko-kojc">
               <div class="glava-k">
                 <div class="slika"><img src="slike/mirko-kojc.jpg" alt="" width="96" height="96"><span class="st" aria-label="Številka na glasovnici">1</span></div>
                 <div>
@@ -1315,7 +1315,7 @@
               </details>
             </article>
             <!-- KANDIDAT: Marija Divjak -->
-            <article class="kandidat">
+            <article class="kandidat" id="marija-divjak">
               <div class="glava-k">
                 <div class="slika"><img src="slike/marija-divjak.jpg" alt="" width="96" height="96"><span class="st" aria-label="Številka na glasovnici">10</span></div>
                 <div>
@@ -1349,7 +1349,7 @@
           <h3><span>Volilna enota 2</span> Partinje in Varda</h3>
           <div class="kandidati">
             <!-- KANDIDAT: Matej Kren -->
-            <article class="kandidat">
+            <article class="kandidat" id="matej-kren">
               <div class="glava-k">
                 <div class="slika"><img src="slike/matej-kren.jpg" alt="" width="96" height="96"><span class="st" aria-label="Številka na glasovnici">8</span></div>
                 <div>
@@ -1371,7 +1371,7 @@
               </details>
             </article>
             <!-- KANDIDAT: Sabina Kacijan -->
-            <article class="kandidat">
+            <article class="kandidat" id="sabina-kacijan">
               <div class="glava-k">
                 <div class="slika"><img src="slike/sabina-kacijan.jpg" alt="" width="96" height="96"><span class="st" aria-label="Številka na glasovnici">1</span></div>
                 <div>
@@ -1394,7 +1394,7 @@
               </details>
             </article>
             <!-- KANDIDAT: Uroš Vuzem -->
-            <article class="kandidat">
+            <article class="kandidat" id="uros-vuzem">
               <div class="glava-k">
                 <div class="slika"><img src="slike/uros-vuzem.jpg" alt="" width="96" height="96"><span class="st" aria-label="Številka na glasovnici">3</span></div>
                 <div>
@@ -1416,7 +1416,7 @@
           <h3><span>Volilna enota 3</span> Gasteraj in Žitence</h3>
           <div class="kandidati">
             <!-- KANDIDAT: Suzana Mihelič -->
-            <article class="kandidat">
+            <article class="kandidat" id="suzana-mihelic">
               <div class="glava-k">
                 <div class="slika"><img src="slike/suzana-mihelic.jpg" alt="" width="96" height="96"><span class="st" aria-label="Številka na glasovnici">9</span></div>
                 <div>
@@ -1437,7 +1437,7 @@
               </details>
             </article>
             <!-- KANDIDAT: Andrej Dvoršak -->
-            <article class="kandidat">
+            <article class="kandidat" id="andrej-dvorsak">
               <div class="glava-k">
                 <div class="slika"><img src="slike/andrej-dvorsak.jpg" alt="" width="96" height="96"><span class="st" aria-label="Številka na glasovnici">7</span></div>
                 <div>
@@ -1461,7 +1461,7 @@
               </details>
             </article>
             <!-- KANDIDAT: Tamara Merkan -->
-            <article class="kandidat">
+            <article class="kandidat" id="tamara-merkan">
               <div class="glava-k">
                 <div class="slika"><img src="slike/tamara-merkan.jpg" alt="" width="96" height="96"><span class="st" aria-label="Številka na glasovnici">2</span></div>
                 <div>
@@ -1625,6 +1625,20 @@
           gumb.disabled = false; gumb.textContent = "Pošlji pobudo";
         }
       });
+    })();
+    /* Povezava na kandidata (npr. #matej-kren) odpre njegovo predstavitev. */
+    (function () {
+      function odpriKandidata() {
+        const id = decodeURIComponent(location.hash.slice(1));
+        const k = id && document.getElementById(id);
+        if (!k || !k.classList.contains("kandidat")) return;
+        const d = k.querySelector("details");
+        if (d) d.open = true;
+        k.scrollIntoView({ behavior: "instant", block: "start" });
+      }
+      window.addEventListener("hashchange", odpriKandidata);
+      window.addEventListener("load", odpriKandidata);
+      odpriKandidata();
     })();
   </script>
 
